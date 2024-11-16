@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a la Pokenea</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <h1>Bienvenido a la Pokenea</h1>
+        <div class="buttons">
+            <a href="{{ url_for('routes.show_pokenea') }}" class="button">Ver Pokenea en HTML</a>
+            <a href="{{ url_for('routes.get_pokenea_json') }}" class="button">Ver Pokenea en JSON</a>
+        </div>
+    </div>
+</body>
+</html>
