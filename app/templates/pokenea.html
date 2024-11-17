@@ -7,12 +7,12 @@
 </head>
 <body>
     <div class="pokenea-container">
-        <h1>{{ pokenea.nombre }}</h1>
-        <p><strong>Altura:</strong> {{ pokenea.altura }}</p>
-        <p><strong>Habilidad:</strong> {{ pokenea.habilidad }}</p>
-        <img src="{{ pokenea.imagen }}" alt="Imagen de {{ pokenea.nombre }}">
-        <p><strong>Frase:</strong> {{ pokenea.frase_filosofica }}</p>
-        <p><em>ID del Contenedor:</em> {{ pokenea.contenedor_id }}</p>
+        <h1>{{ pokenea.nombre if pokenea.nombre else 'Nombre no disponible' }}</h1>
+        <p><strong>Altura:</strong> {{ pokenea.altura if pokenea.altura else 'No disponible' }}</p>
+        <p><strong>Habilidad:</strong> {{ pokenea.habilidad if pokenea.habilidad else 'No disponible' }}</p>
+        <img src="{{ pokenea.imagen if pokenea.imagen else '#' }}" alt="Imagen de {{ pokenea.nombre }}">
+        <p><strong>Frase:</strong> {{ pokenea.frase_filosofica if pokenea.frase_filosofica else 'No disponible' }}</p>
+        <p><em>ID del Contenedor:</em> {{ pokenea.contenedor_id if pokenea.contenedor_id else 'No disponible' }}</p>
         <div class="buttons">
             <button onclick="location.reload()">Cambiar pokemon</button>
             <button onclick="window.location.href='/'">Volver al Menú Principal</button>

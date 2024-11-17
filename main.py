@@ -1,6 +1,8 @@
-from app import create_app
+from flask import Flask
+from app.routes import app_routes  # Importa tu Blueprint desde routes.py
 
-app = create_app()
+app = Flask(__name__, template_folder = 'app/templates')
+app.register_blueprint(app_routes)  # Registra el Blueprint
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug = True)
